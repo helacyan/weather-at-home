@@ -1,0 +1,79 @@
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+
+  &.open {
+    visibility: inherit;
+    opacity: 1;
+  }
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: opacity 250ms ease-in;
+
+  > .modal__select-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 24vh;
+    width: 25vw;
+    background: rgb(167, 128, 128);
+    padding: 64px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .close {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 16px;
+  }
+}
+
+.ng-select.custom {
+  border:1px saddlebrown solid;
+  min-height: 3px;
+  border-radius: 0;
+}
+.ng-select.custom .ng-select-container  {
+  min-height: 0px;
+  border-radius: 0;
+}
+
+.select-wrapper__addButton {
+  display: flex;
+  width: 10vw;
+  height: 5vh;
+  font-size: 1.3vmax;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #673ab7;
+};
+
+
+.select-wrapper__addButton {
+  font-size: 1vw;
+}
+
+@media screen and (max-width: 900px) {
+  .select-wrapper__addButton {
+    width: 24vw;
+    font-size: 2vw;
+    height: 7vh
+  }
+}

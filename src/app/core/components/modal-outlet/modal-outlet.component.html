@@ -1,0 +1,28 @@
+<ng-container *ngIf="display$ | async as display">
+  <section [class.open]="display === 'open'"
+           (click)="close()"
+           class="modal"
+           >
+    <div class="modal__select-wrapper"
+        (click)="$event.stopPropagation()"
+        clickCatcher>
+      <button class="close" type="button" (click)="close()">X</button>
+
+      <ng-select bindValue="selectedCity"
+          [(ngModel)]="clear"
+          (search)="onSearch($event)"
+          (change)="onChange($event)" >
+        <ng-option *ngFor="let city of cities | async | filter:detectedChangeRef"
+            [value]="city.id">
+            {{city.LocalizedName}}
+        </ng-option>
+      </ng-select>
+      <button class="select-wrapper__addButton"
+          mat-stroked-button color="primary"
+          (click)="addCity()"
+          [disabled]="!selectedCity">
+          Добавить город
+      </button>
+    </div>
+  </section>
+</ng-container>

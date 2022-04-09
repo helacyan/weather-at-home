@@ -1,0 +1,9 @@
+<div class="body" *ngIf="citiesService.citiesData.length > 0">
+  <app-card
+  *ngFor="let i of citiesService.citiesData"
+  [card]="i"
+  ></app-card>
+</div>
+<div class="body placeholder" *ngIf="!citiesService.citiesData.length">
+  Добавьте город
+</div>

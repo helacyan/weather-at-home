@@ -1,0 +1,17 @@
+<div class="body__card"
+    (mouseover)="this.isChangedBlock = true"
+    (mouseout)="isChangedBlock = false"
+>
+  <p>{{card.cityName}}</p>
+  <img  src={{card.weatherIcon}} alt="">
+  <p>{{card.precipitation}}</p>
+  <p>{{card.temperature}}℃</p>
+  <button mat-icon-button
+      color="primary"
+      (click)="deleteCard()">
+    <fa-icon
+      [hidden]="!isChangedBlock" size="2x"
+      [icon]="['fas', 'delete-left']">
+    </fa-icon>
+  </button>
+</div>

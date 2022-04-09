@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="header__wrapper">
+    <div class="header__buttons">
+      <button class="header__button"
+          mat-raised-button color="primary"
+          (click)="open()">
+        Добавить город
+      </button>
+      <button class="header__button"
+          mat-raised-button color="primary"
+          (click)="startTracking()"
+          [disabled]="citiesService.citiesData.length < 1">
+        Старт отслеживания погоды
+      </button>
+      <button class="header__button"
+          mat-raised-button color="primary"
+          (click)="stopTracking()"
+          [disabled]="!isTracking">
+        Стоп отслеживания погоды
+      </button>
+    </div>
+  </div>
+</div>
