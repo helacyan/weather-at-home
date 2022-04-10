@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, HostListener } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
 
 @Directive({selector: '[clickCatcher]'})
@@ -10,7 +10,7 @@ export class ClickCatcher {
 
   @HostListener('window:keydown.escape', ['$event.target.id'])
   handleKeyDown(event: KeyboardEvent) {
-    this.modalService.status ?  this.modalService.close() : null
+    this.modalService.status$ ?  this.modalService.close() : null
   }
 
 }
